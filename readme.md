@@ -16,6 +16,8 @@
 
 ## 游戏简介
 
+![example](https://github.com/imajiayu/Horror_Corridor/blob/master/src/example.png)
+
 ## 实现内容
 
 ## 时间表
