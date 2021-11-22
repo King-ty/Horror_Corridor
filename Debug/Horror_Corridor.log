@@ -1,0 +1,18 @@
+﻿  Corridor.cpp
+C:\Users\Lenovo\source\repos\Horror_Corridor\include\shader_m.h(44,40): warning C4101: “e”: 未引用的局部变量
+C:\Users\Lenovo\source\repos\Horror_Corridor\include\Corridor.h(19,19): error C2059: 语法错误:“字符串”
+  Scene.cpp
+C:\Users\Lenovo\source\repos\Horror_Corridor\include\shader_m.h(44,40): warning C4101: “e”: 未引用的局部变量
+C:\Users\Lenovo\source\repos\Horror_Corridor\include\Corridor.h(19,19): error C2059: 语法错误:“字符串”
+  源.cpp
+C:\Users\Lenovo\source\repos\Horror_Corridor\include\shader_m.h(44,40): warning C4101: “e”: 未引用的局部变量
+C:\Users\Lenovo\source\repos\Horror_Corridor\source\源.cpp(102,28): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\Lenovo\source\repos\Horror_Corridor\source\源.cpp(176,17): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\Lenovo\source\repos\Horror_Corridor\source\源.cpp(177,17): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\Lenovo\source\repos\Horror_Corridor\source\源.cpp(181,19): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\Lenovo\source\repos\Horror_Corridor\source\源.cpp(182,19): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\Lenovo\source\repos\Horror_Corridor\source\源.cpp(184,13): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\Lenovo\source\repos\Horror_Corridor\source\源.cpp(185,13): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\Lenovo\source\repos\Horror_Corridor\source\源.cpp(194,31): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  源1.cpp
+  正在生成代码...

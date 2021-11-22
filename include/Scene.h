@@ -5,11 +5,10 @@
 class Scene
 {
 	std::vector<Corridor> corridorList;
-	glm::vec3 viewerPos;
 
 public:
 	Scene();
-	void undateCorridor();
+	void updateCorridor();
 	void render();
 };
 
