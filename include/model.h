@@ -21,8 +21,6 @@
 #include <vector>
 using namespace std;
 
-unsigned int TextureFromFile(const char *path, const string &directory, bool gamma = false);
-
 class Model 
 {
 public:
@@ -46,6 +44,7 @@ public:
     }
     
 private:
+    inline unsigned int TextureFromFile(const char* path, const string& directory, bool gamma = false);
     // loads a model with supported ASSIMP extensions from file and stores the resulting meshes in the meshes vector.
     void loadModel(string const &path)
     {
@@ -203,7 +202,7 @@ private:
 };
 
 
-unsigned int TextureFromFile(const char *path, const string &directory, bool gamma)
+unsigned int Model::TextureFromFile(const char *path, const string &directory, bool gamma)
 {
     string filename = string(path);
     filename = directory + '/' + filename;

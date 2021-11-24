@@ -21,10 +21,10 @@ class Corridor
 	corridorType type;
 	Shader* shader;
 	Model* _model;
-	//std::vector<Object> objectList;
+	//std::vector<Object> objectList;走廊中物体列表
 
 public:
-	Corridor(corridorType type);
-	void render(Camera* camera);
+	Corridor(corridorType type);//根据走廊类型生成走廊
+	void render(Camera* camera,glm::mat4 model);//渲染前设定位置
 };
 
