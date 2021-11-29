@@ -1,36 +1,43 @@
 #include "../include/Corridor.h"
 
-Corridor::Corridor(corridorType type)
+Corridor::Corridor(corridorType type_, corridorDir dir_)
 {
 	shader =new Shader("./source/shaders/1.model_loading.vs", "./source/shaders/1.model_loading.fs");
-	_model = new Model(string("resources/objects/straight/straight.obj"));
-	/*
-	switch (type)
+
+	switch (type_)
 	{
 	case straightCorridor:
-		Model model_(string("resources/objects/straight/straight.obj"));
-		_model = &model_;
+		_model = new Model(string("resources/objects/straight/straight.obj"));
+		type = type_;
+		dir = dir_;
 		break;
-	case cornerCorridor:
-		Model model_(string("resources/objects/straight/straight.obj"));
-		_model = &model_;
+	case cornerCorridorL:
+		_model = new Model(string("resources/objects/corner/corner.obj"));
+		type = type_;
+		dir = dir_;
 		break;
-	case stairsCorridor:
-		Model model_(string("resources/objects/straight/straight.obj"));
-		_model = &model_;
+	case cornerCorridorR:
+		_model = new Model(string("resources/objects/corner/corner.obj"));
+		type = type_;
+		dir = dir_;
 		break;
-	default:
-		Model model_(string("resources/objects/straight/straight.obj"));
-		_model = &model_;
+	case stairsCorridorU:
+		_model = new Model(string("resources/objects/stair/stair.obj"));
+		type = type_;
+		dir = dir_;
+		break;
+	case stairsCorridorD:
+		_model = new Model(string("resources/objects/stair/stair.obj"));
+		type = type_;
+		dir = dir_;
 		break;
 	}
-	*/
 }
 
 void Corridor::render(Camera* camera,glm::mat4 model_)
 {
 	/*
-	把走廊中的所有物体渲染一边
+	把走廊中的所有物体渲染一遍
 	*/
 
 	//渲染走廊
@@ -40,9 +47,6 @@ void Corridor::render(Camera* camera,glm::mat4 model_)
 	shader->setMat4("projection", projection);
 	shader->setMat4("view", view);
 
-	glm::mat4 model = glm::mat4(1.0f);
-	model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
-	model = glm::scale(model, glm::vec3(0.001f));	// it's a bit too big for our scene, so scale it down
-	shader->setMat4("model", model);
+	shader->setMat4("model", model_);
 	_model->Draw(*shader);
 }

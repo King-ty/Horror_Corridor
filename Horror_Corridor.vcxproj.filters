@@ -42,6 +42,9 @@
     <ClInclude Include="include\parameter.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="include\mySound.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Corridor.cpp">

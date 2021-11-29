@@ -11,6 +11,8 @@
 #include "../include/model.h"
 #include "../include/parameter.h"
 #include "../include/Scene.h"
+#include<irrKlang/irrKlang.h>
+#include "../include/mySound.h"
 
 #include <iostream>
 
@@ -20,8 +22,10 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow* window);
 
+mySoundEngline Sound;
+
 // camera
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera camera(glm::vec3(1.0f, 1.3f, -5.0f));
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -31,6 +35,8 @@ float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 int main()
 {
+    //Sound.play2D("resources/musics/background.mp3", 1);
+
     GLFWwindow* window=NULL;
     init_glfw_glad(window);
     if (!window)//创建窗口失败
@@ -62,6 +68,7 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         scene.render();//渲染整个场景
+        scene.updateCorridor();
 
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
@@ -84,13 +91,25 @@ void processInput(GLFWwindow* window)
         glfwSetWindowShouldClose(window, true);
 
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+    {
+        Sound.playFewSecond("resources/musics/footstep.mp3", 0.5);
         camera.ProcessKeyboard(FORWARD, deltaTime);
+    }
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+    {
+        Sound.playFewSecond("resources/musics/footstep.mp3", 0.5);
         camera.ProcessKeyboard(BACKWARD, deltaTime);
+    }
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+    {
+        Sound.playFewSecond("resources/musics/footstep.mp3", 0.5);
         camera.ProcessKeyboard(LEFT, deltaTime);
+    }
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+    {
+        Sound.playFewSecond("resources/musics/footstep.mp3", 0.5);
         camera.ProcessKeyboard(RIGHT, deltaTime);
+    }
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
